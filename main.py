@@ -15,11 +15,20 @@ def cal_ielts_grade(reading:float, listening:float, speaking:float, writing:floa
     grade = round((reading + listening + speaking + writing)/4, 1)
     return grade
 
+def play_keo_bua_bao(p1:str, p2: str) -> str:
+    if p1 == p2:
+        print('Draw')
+    elif p1 == 'keo' and p2 == 'bao':
+            print('player 1 wins')
+    elif p1 == 'bua' and p2 == 'keo':
+            print('player 1 wins')
+    elif p1 == 'bao' and p2 == 'bua':
+            print('player 1 wins')
+    else: print('player 2 wins')
+
 if __name__ == "__main__":
-    reading = float(input('Enter reading score: '))
-    listening = float(input('Enter listening score: '))
-    speaking = float(input('Enter speaking score: '))
-    writing = float(input('Enter writing score: '))
-    print(cal_ielts_grade(reading=reading, listening=listening, speaking=speaking, writing=writing))
+    p1 = str(input('Enter player 1''s choice: '))
+    p2 = str(input('Enter player 2''s choice: '))
+    print(play_keo_bua_bao(p1=p1, p2=p2))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
