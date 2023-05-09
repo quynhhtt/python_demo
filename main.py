@@ -17,17 +17,17 @@ def cal_ielts_grade(reading: float, listening: float, speaking: float, writing: 
     return grade
 
 
-def play_keo_bua_bao(p1: str, p2: str):
+def play_keo_bua_bao_with_p1_win(p1: str, p2: str) -> bool:
     if p1 == p2:
-        print('Draw')
+        return False
     elif p1 == 'keo' and p2 == 'bao':
-        print('player 1 wins')
+        return True
     elif p1 == 'bua' and p2 == 'keo':
-        print('player 1 wins')
+        return True
     elif p1 == 'bao' and p2 == 'bua':
-        print('player 1 wins')
+        return True
     else:
-        print('player 2 wins')
+        return False
 
 
 def while_loop():
@@ -37,10 +37,10 @@ def while_loop():
         a = int(input('Enter a number:'))
 
 
-def keobuabao_loop():
+def keo_bua_bao_loop():
     p1 = str(input('Enter player 1''s choice: '))
     p2 = str(input('Enter player 2''s choice: '))
-    while (p1 == 'keo' and p2 == 'bao') or (p1 == 'bua' and p2 == 'keo') or (p1 == 'bao' and p2 == 'bua'):
+    while play_keo_bua_bao_with_p1_win(p1=p1, p2=p2):
         print('player 1 wins')
         p1 = str(input('Enter player 1''s choice: '))
         p2 = str(input('Enter player 2''s choice: '))
@@ -51,5 +51,24 @@ if __name__ == "__main__":
     # p2 = str(input('Enter player 2''s choice: '))
     # play_keo_bua_bao(p1=p1, p2=p2)
 
-    keobuabao_loop()
+    list_of_number = [1, 5, 2, 6, 9, 8, 7, 4, 5, 1, 2, 4]
+    total = 0
+    for number in list_of_number:
+        if number % 2 != 0:
+            total = number + total
+    print(total)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+numlist = [1,2,3,4,5,6]
+temp = numlist[0]
+numlist[0] = numlist[-1]
+numlist[-1] = temp
+print(numlist)
+
+numlist = [1,2,3,4,5,6]
+p1 = int(input('Position 1: '))
+p2 = int(input('Position 2: '))
+temp = numlist[p1]
+numlist[p1] = numlist[p2]
+numlist[p2] = temp
+print(numlist)
