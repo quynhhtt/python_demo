@@ -1,4 +1,6 @@
 # This is a sample Python script.
+from typing import List
+
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
@@ -46,29 +48,77 @@ def keo_bua_bao_loop():
         p2 = str(input('Enter player 2''s choice: '))
 
 
+def swap_dau_cuoi(num_list: List) -> list:
+    temp = num_list[0]
+    num_list[0] = num_list[-1]
+    num_list[-1] = temp
+    return num_list
+
+
+def find_max_number_in_list(list1: List) -> int:
+    max_num = 0
+    for i in list1:
+        if i > max_num:
+            max_num = i
+    return max_num
+
+
+def find_second_max_number_in_list(list1: List) -> int:
+    max_num = 0
+    max_2nd_num = 0
+    for i in list1:
+        if i > max_num:
+            max_2nd_num = max_num
+            max_num = i
+        elif i != max_num and i > max_2nd_num:
+            max_2nd_num = i
+    return max_2nd_num
+
+
+def find_min_number_in_list(list1: List) -> int:
+    min_num = 0
+    for i in list1:
+        if i < min_num:
+            min_num = i
+    return min_num
+
+
+def find_second_min_number_in_list(list1: List) -> int:
+    min_num = 99
+    min_2nd_num = 99
+    for i in list1:
+        if i < min_num:
+            min_2nd_num = min_num
+            min_num = i
+        elif i != min_num and i < min_2nd_num:
+            min_2nd_num = i
+    return min_2nd_num
+
+
 if __name__ == "__main__":
     # p1 = str(input('Enter player 1''s choice: '))
     # p2 = str(input('Enter player 2''s choice: '))
     # play_keo_bua_bao(p1=p1, p2=p2)
 
-    list_of_number = [1, 5, 2, 6, 9, 8, 7, 4, 5, 1, 2, 4]
-    total = 0
-    for number in list_of_number:
-        if number % 2 != 0:
-            total = number + total
-    print(total)
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    list_of_number = [1, 5, 2, 6, 9, 8, 7, 4, 5, 9, 9, 1, 2, 4]
+    # total = 0
+    # for number in list_of_number:
+    #     if number % 2 != 0:
+    #         total = number + total
+    # print(total)
 
-numlist = [1,2,3,4,5,6]
-temp = numlist[0]
-numlist[0] = numlist[-1]
-numlist[-1] = temp
-print(numlist)
 
-numlist = [1,2,3,4,5,6]
-p1 = int(input('Position 1: '))
-p2 = int(input('Position 2: '))
-temp = numlist[p1]
-numlist[p1] = numlist[p2]
-numlist[p2] = temp
-print(numlist)
+    num_list = [1, 2, 3, 4, 5, 6]
+    # new_list = swap_dau_cuoi(num_list=num_list)
+    # print(new_list)
+
+    print(find_second_min_number_in_list(list1=list_of_number))
+
+
+# numlist = [1, 2, 3, 4, 5, 6]
+# p1 = int(input('Position 1: '))
+# p2 = int(input('Position 2: '))
+# temp = numlist[p1]
+# numlist[p1] = numlist[p2]
+# numlist[p2] = temp
+# print(numlist)
