@@ -95,25 +95,49 @@ def find_second_min_number_in_list(list1: List) -> int:
     return min_2nd_num
 
 
+def sum_list(list2: List) -> int:
+    total = 0
+    for number in list2:
+        total = number + total
+    return total
+
+
+def sort_list(list2: List) -> list:
+    a = len(list2)
+    for i in range(a):
+        for j in range(i+1,a):
+            if list2[i] > list2[j]:
+                b = list2[i]
+                list2[i] = list2[j]
+                list2[j] = b
+    return list2
+
+
 if __name__ == "__main__":
     # p1 = str(input('Enter player 1''s choice: '))
     # p2 = str(input('Enter player 2''s choice: '))
     # play_keo_bua_bao(p1=p1, p2=p2)
 
     list_of_number = [1, 5, 2, 6, 9, 8, 7, 4, 5, 9, 9, 1, 2, 4]
-    # total = 0
-    # for number in list_of_number:
-    #     if number % 2 != 0:
-    #         total = number + total
-    # print(total)
+
 
 
     num_list = [1, 2, 3, 4, 5, 6]
     # new_list = swap_dau_cuoi(num_list=num_list)
     # print(new_list)
 
-    print(find_second_min_number_in_list(list1=list_of_number))
+    # print(find_second_min_number_in_list(list1=list_of_number))
 
+    list_2 = []
+    n = int(input('Enter number of elements:'))
+    for i in range(0,n):
+        ele = int(input('Element:'))
+        list_2.append(ele)
+    print(list_2)
+
+    print(sum_list(list2=list_2))
+
+    print(sort_list(list2=list_of_number))
 
 # numlist = [1, 2, 3, 4, 5, 6]
 # p1 = int(input('Position 1: '))
