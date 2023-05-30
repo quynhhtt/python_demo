@@ -49,9 +49,10 @@ def keo_bua_bao_loop():
 
 
 def swap_dau_cuoi(num_list: List) -> list:
-    temp = num_list[0]
-    num_list[0] = num_list[-1]
-    num_list[-1] = temp
+    # temp = num_list[0]
+    # num_list[0] = num_list[-1]
+    # num_list[-1] = temp
+    num_list[0], num_list[-1] = num_list[-1], num_list[0]
     return num_list
 
 
@@ -118,9 +119,43 @@ if __name__ == "__main__":
     # p2 = str(input('Enter player 2''s choice: '))
     # play_keo_bua_bao(p1=p1, p2=p2)
 
-    list_of_number = [1, 5, 2, 6, 9, 8, 7, 4, 5, 9, 9, 1, 2, 4]
+    # list_of_number = [1, 5, 2, 6, 9, 8, 7, 4, 5, 9, 9, 1, 2, 4]
+    # list_of_number = list(set(list_of_number))
+    # print(list_of_number)
+    #
+    # mylist = ["a", "b", "a", "c", "c"]
+    # mylist = list(dict.fromkeys(mylist))
+    # print(mylist)
 
+    list1 = [1, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7]
+    list2 = []
+    i = 0
+    for j in range(1,len(list1)):
+        if list1[i] != list1[j]:
+            list2.append(list1[i])
+        i = i + 1
+    print(list2)
 
+    # for i in list1:
+    #     if i not in list2:
+    #         list2.append(i)
+    # print(list2)
+
+    # dictQ = {
+    #     "ten" : "Quynh",
+    #     "tuoi" : 18,
+    #     "a" : "b"
+    # }
+    # dictA = {
+    #     "ten" : "A",
+    #     "tuoi" : 87,
+    #     "nha" : "bmt"
+    # }
+    # dict1 = {
+    #     "dictQ" : dictQ,
+    #     "dictA" : dictA
+    # }
+    # print(dict1.get("dictQ").get("ten"))
 
     num_list = [1, 2, 3, 4, 5, 6]
     # new_list = swap_dau_cuoi(num_list=num_list)
@@ -128,16 +163,16 @@ if __name__ == "__main__":
 
     # print(find_second_min_number_in_list(list1=list_of_number))
 
-    list_2 = []
-    n = int(input('Enter number of elements:'))
-    for i in range(0,n):
-        ele = int(input('Element:'))
-        list_2.append(ele)
-    print(list_2)
-
-    print(sum_list(list2=list_2))
-
-    print(sort_list(list2=list_of_number))
+    # list_2 = []
+    # n = int(input('Enter number of elements:'))
+    # for i in range(0,n):
+    #     ele = int(input('Element:'))
+    #     list_2.append(ele)
+    # print(list_2)
+    #
+    # print(sum_list(list2=list_2))
+    #
+    # print(sort_list(list2=list_of_number))
 
 # numlist = [1, 2, 3, 4, 5, 6]
 # p1 = int(input('Position 1: '))
